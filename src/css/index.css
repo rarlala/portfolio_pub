@@ -11,8 +11,9 @@ body {
 }
 
 .wrapper {
-  width: 95vw;
-  margin: 0 auto;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0 40px;
 }
 
 /* #FFB100, #FFDB00, #FF8100, #FF4500, #FF0800 */
@@ -77,7 +78,7 @@ body {
   100% {
     opacity: 1;
     left: 105px;
-    top: 60px;
+    top: 50px;
     font-size: 2.1875rem;
     color: #ffb100;
   }
@@ -87,12 +88,12 @@ body {
   0% {
     opacity: 0;
   }
-  50% {
+  25% {
     opacity: 1;
   }
-  70% {
-    top: 55%;
-    font-size: 1.5rem;
+  50% {
+    opacity: 1;
+    font-size: 2rem;
   }
 }
 
@@ -119,7 +120,7 @@ body {
   text-align: center;
   font-size: 2rem;
   line-height: 30vw;
-  animation: circleAni 3s ease forwards;
+  animation: circleAni 2s ease forwards;
 }
 
 .first-view h1.logo {
@@ -129,14 +130,14 @@ body {
   transform: translate(-50%, -50%);
   font-size: 6.25rem;
   color: #ffffff;
-  animation: logoAni 3s ease-in-out 1.3s forwards;
+  animation: logoAni 2s ease-in-out 1.5s forwards;
   opacity: 0;
   font-weight: bold;
 }
 
 .first-view p.logo-name {
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.8rem;
@@ -153,28 +154,23 @@ header {
   box-sizing: border-box;
   top: 0;
   left: 0;
-  width: 95vw;
+  width: 100%;
   height: 80px;
-  margin-left: 2.5vw;
-  padding: 2em 0;
+  padding: 2em 40px;
   z-index: 100;
   background: #ffffff;
   opacity: 0;
 }
 
-header .logo-area {
-  position: relative;
-  line-height: 3.125rem;
-}
-
 header p {
-  padding: 0 10px;
   font-weight: 500;
   opacity: 0;
 }
 
 header p.logo {
   position: absolute;
+  top: 20px;
+  padding-left: 40px;
   font-family: 'MuseoModerno', cursive;
   font-size: 2.1875rem;
   color: #ffb100;
@@ -190,7 +186,7 @@ header p.logo-name {
 
 header .menu {
   position: absolute;
-  right: 1.5em;
+  right: 40px;
 }
 
 header .menu ul {
@@ -319,12 +315,17 @@ main {
 }
 
 #intro .text-area p.hi {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   margin-bottom: 20px;
 }
 
 #intro .text-area p {
+  text-align: right;
   font-size: 1.875rem;
+  /* -webkit-text-stroke: 1px #000; */
+  text-shadow: #ff8100 1px 1px, #ff8100 1px 1px, #ff8100 1px 1px, #ff8100 1px 1px;
+
+  color: #ffffff;
 }
 
 #intro .text-area p em {
@@ -332,6 +333,7 @@ main {
   font-size: 2.8125rem;
   color: #ffffff;
   -webkit-text-stroke: 1px #ffb100;
+  text-shadow: #ff8100 1px 1px, #ff8100 2px 2px, #ff8100 3px 3px, #ff8100 4px 4px;
 }
 
 .stair-img-area {
@@ -351,7 +353,7 @@ main {
   content: '';
   position: absolute;
   top: 150px;
-  left: -900px;
+  left: -300px;
   width: 2500px;
   height: 2000px;
   background: #f0f0f0;
@@ -361,9 +363,9 @@ main {
   content: '';
   position: absolute;
   top: 150px;
-  left: -2150px;
-  width: 2500px;
-  height: 2000px;
+  left: -1800px;
+  width: 3000px;
+  height: 2600px;
   transform: rotateY(90deg);
   background: #ffb100;
   z-index: -1;
@@ -475,18 +477,15 @@ main {
 }
 
 #portFolio .portFolio-list {
-  width: 75%;
+  width: 95%;
   margin: 0 auto;
 }
 
-#portFolio .portFolio-list li {
+#portFolio .portFolio-list .portFolio-content {
   position: relative;
   top: 150px;
   margin-bottom: 50px;
   opacity: 0;
-}
-
-#portFolio .portFolio-content {
   overflow: hidden;
 }
 
@@ -497,23 +496,24 @@ main {
 
 #portFolio .portFolio-content div.left .site-img {
   position: relative;
-  width: 420px;
-  height: 260px;
   max-width: 100%;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
-  background: url('../img/portfolio/01_osulloc.png') no-repeat center/contain, linear-gradient(#fff, #fff);
+  min-height: 350px;
+  display: block;
+  background: url('../img/portfolio/01_osulloc.png') no-repeat center/contain;
+  border: 5px solid #f0f0f0;
+  border-radius: 20px;
 }
 
 #portFolio .portFolio-content.two div.left .site-img {
-  background: url('../img/portfolio/02_gongjindan.png') no-repeat center/contain, linear-gradient(#efefef, #efefef);
+  background: url('../img/portfolio/02_gongjindan.png') no-repeat center/contain;
 }
 
 #portFolio .portFolio-content.three div.left .site-img {
-  background: url('../img/portfolio/03_knmm.png') no-repeat center/contain, linear-gradient(#302921, #302921);
+  background: url('../img/portfolio/03_knmm.png') no-repeat center/contain;
 }
 
 #portFolio div.right {
+  position: relative;
   float: right;
   width: 40%;
 }
@@ -540,7 +540,7 @@ main {
   color: #ff8100;
   border-radius: 5px;
   width: 200px;
-  margin-top: 30px;
+  margin: 0 20px 20px 0;
   padding: 10px 15px;
   transition: all 0.5s;
 }
@@ -599,6 +599,8 @@ main {
 #contact p.email {
   line-height: 60px;
   cursor: pointer;
+  font-weight: 500;
+  font-family: 'MuseoModerno', cursive;
 }
 
 #contact p.email span {
@@ -626,28 +628,19 @@ footer .copy {
   text-align: center;
 }
 
-footer .sns-link {
-  position: absolute;
-  top: 5px;
-  right: 30px;
-}
-
-footer .sns-link a {
-  display: inline-block;
-}
-
-footer .sns-link a img {
-  width: 28px;
-  height: 28px;
-}
-
-footer .sns-link a + a {
-  margin-left: 0.5em;
-}
-
 /* media query  */
 
+@media screen and (max-width: 1420px) {
+  .stair-group:first-child::before {
+    left: -1500px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  #intro .text-area {
+    padding: 5rem 0 0 20px;
+  }
+
   #portFolio .portFolio-content .left,
   #portFolio .portFolio-content .right {
     float: none;
@@ -680,6 +673,14 @@ footer .sns-link a + a {
     right: 400px;
   }
 
+  header nav.menu {
+    display: none;
+  }
+
+  header .btn-mobile-menu {
+    display: block;
+  }
+
   header nav.menu li + li {
     margin-left: 0.5rem;
   }
@@ -709,13 +710,5 @@ footer .sns-link a + a {
 
   #contact p.email:hover span {
     font-size: 1.5rem;
-  }
-
-  header nav.menu {
-    display: none;
-  }
-
-  header .btn-mobile-menu {
-    display: block;
   }
 }

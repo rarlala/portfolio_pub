@@ -1,4 +1,12 @@
 $(function () {
+  preventDefaultAnchor();
+
+  function preventDefaultAnchor() {
+    $(document).on('click', 'a[href="#"]', function (e) {
+      e.preventDefault();
+    });
+  }
+
   //first-view 끝난 다음 동작 실행
   setTimeout(function () {
     $('html, body').animate({
@@ -13,13 +21,13 @@ $(function () {
     $('header, #intro, #portFolio').animate({
       opacity: 1,
     });
-  }, 4200);
+  }, 3200);
 
   // 계단 보여주기
   $('#intro .stair-img-area > div >div').each(function (i) {
     $(this)
       .stop(true)
-      .delay(5000 + i * 100)
+      .delay(3400 + i * 100)
       .animate(
         {
           opacity: 1,
